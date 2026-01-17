@@ -311,6 +311,29 @@
     left: -50px;
 }
 
+@media (max-width: 991px) {
+    .cta-card {
+        padding: var(--space-12);
+    }
+
+    .section-header h2 {
+        font-size: var(--text-3xl);
+    }
+
+    .value-prop-text h2 {
+        font-size: var(--text-3xl);
+    }
+
+    .industries-text h2 {
+        font-size: var(--text-3xl);
+    }
+
+    .insights-section .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 @media (max-width: 768px) {
     .cta-card {
         padding: var(--space-10);
@@ -327,5 +350,85 @@
     .cta-actions .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .value-prop-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .value-prop-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .section-header h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .section-description {
+        font-size: var(--text-base);
+    }
+
+    .value-prop-text h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .value-prop-text p {
+        font-size: var(--text-base);
+    }
+}
+
+@media (max-width: 575px) {
+    .cta-card {
+        padding: var(--space-8);
+        border-radius: var(--radius-xl);
+    }
+
+    .cta-card h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .cta-card p {
+        font-size: var(--text-base);
+    }
+
+    .value-prop {
+        padding: var(--space-12) 0;
+    }
+
+    .value-prop-text h2 {
+        font-size: var(--text-xl);
+    }
+
+    .section-subtitle {
+        font-size: var(--text-xs);
+        padding: var(--space-1) var(--space-3);
+    }
+
+    .industry-card {
+        padding: var(--space-4);
+    }
+
+    .industry-icon {
+        font-size: var(--text-xl);
+    }
+
+    .industry-name {
+        font-size: var(--text-sm);
+    }
+
+    .cta-circle {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .cta-card h2 {
+        font-size: var(--text-xl);
+    }
+
+    .section-header h2 {
+        font-size: var(--text-xl);
     }
 }

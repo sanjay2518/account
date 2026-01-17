@@ -310,3 +310,142 @@
     line-height: 1.7;
     margin: 0;
 }
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+@media (max-width: 767px) {
+    .form-header h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .info-card,
+    .social-card {
+        padding: var(--space-6);
+    }
+
+    .info-card h3,
+    .social-card h3 {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-4);
+    }
+
+    .info-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .info-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .office-card {
+        padding: var(--space-6);
+    }
+
+    .office-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .office-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .office-card h3 {
+        font-size: var(--text-lg);
+    }
+
+    .faq-header h2 {
+        font-size: var(--text-3xl);
+    }
+
+    .faq-item summary {
+        padding: var(--space-4) var(--space-5);
+        font-size: var(--text-sm);
+    }
+
+    .faq-item p {
+        padding: 0 var(--space-5) var(--space-4);
+        font-size: var(--text-sm);
+    }
+
+    .social-link {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 575px) {
+    .contact-grid {
+        gap: var(--space-6);
+    }
+
+    .form-header {
+        margin-bottom: var(--space-6);
+    }
+
+    .form-header h2 {
+        font-size: var(--text-xl);
+    }
+
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+
+    .info-card,
+    .social-card {
+        padding: var(--space-5);
+    }
+
+    .info-card h3,
+    .social-card h3 {
+        font-size: var(--text-base);
+    }
+
+    .office-card {
+        padding: var(--space-5);
+    }
+
+    .office-card h3 {
+        font-size: var(--text-base);
+    }
+
+    .office-address {
+        font-size: var(--text-xs);
+    }
+
+    .faq-header h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-link svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .faq-header h2 {
+        font-size: var(--text-xl);
+    }
+
+    .office-icon {
+        width: 44px;
+        height: 44px;
+    }
+}

@@ -11,6 +11,10 @@ import InsightDetail from './pages/InsightDetail';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
 import Search from './pages/Search';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfUse from './pages/TermsOfUse';
+import CookieSettings from './pages/CookieSettings';
+import Accessibility from './pages/Accessibility';
 import './index.css';
 
 // Scroll to top on route change
@@ -45,6 +49,11 @@ function App() {
           <Route path="/careers/:section" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/search" element={<Search />} />
+          {/* Legal Pages */}
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/cookies" element={<CookieSettings />} />
+          <Route path="/accessibility" element={<Accessibility />} />
           {/* Fallback route */}
           <Route path="*" element={<Home />} />
         </Routes>

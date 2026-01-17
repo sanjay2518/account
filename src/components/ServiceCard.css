@@ -194,3 +194,121 @@
 .service-card-large .service-card-description {
     font-size: var(--text-base);
 }
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+@media (max-width: 767px) {
+    .service-card {
+        padding: var(--space-6);
+    }
+
+    .service-card-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .icon-emoji {
+        font-size: var(--text-2xl);
+    }
+
+    .service-card-title {
+        font-size: var(--text-lg);
+    }
+
+    .service-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .service-card-large {
+        padding: var(--space-8);
+    }
+
+    .service-card-large .service-card-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .service-card-large .service-card-title {
+        font-size: var(--text-xl);
+    }
+}
+
+@media (max-width: 575px) {
+    .service-card {
+        padding: var(--space-5);
+    }
+
+    .service-card-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: var(--space-4);
+    }
+
+    .service-card-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .icon-emoji {
+        font-size: var(--text-xl);
+    }
+
+    .service-card-title {
+        font-size: var(--text-base);
+        margin-bottom: var(--space-2);
+    }
+
+    .service-card-description {
+        font-size: var(--text-xs);
+        margin-bottom: var(--space-3);
+    }
+
+    .service-card-tag {
+        font-size: 10px;
+        padding: 2px var(--space-2);
+    }
+
+    .service-card-arrow {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .service-card-arrow svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .service-card-decoration {
+        display: none;
+    }
+
+    .service-card-large {
+        padding: var(--space-6);
+    }
+
+    .service-card-large .service-card-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .service-card-large .service-card-title {
+        font-size: var(--text-lg);
+    }
+
+    .service-card-large .service-card-description {
+        font-size: var(--text-sm);
+    }
+}
+
+@media (max-width: 380px) {
+    .service-card-title {
+        font-size: var(--text-sm);
+    }
+
+    .service-card-icon {
+        width: 44px;
+        height: 44px;
+    }
+}

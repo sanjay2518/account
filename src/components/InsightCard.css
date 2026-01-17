@@ -192,3 +192,67 @@
         min-height: 200px;
     }
 }
+
+@media (max-width: 767px) {
+    .insight-card-image {
+        height: 180px;
+    }
+
+    .insight-card-content {
+        padding: var(--space-5);
+    }
+
+    .insight-card-title {
+        font-size: var(--text-base);
+    }
+
+    .insight-card-featured .insight-card-title {
+        font-size: var(--text-lg);
+    }
+
+    .insight-card-excerpt {
+        -webkit-line-clamp: 2;
+    }
+}
+
+@media (max-width: 575px) {
+    .insight-card-image {
+        height: 160px;
+    }
+
+    .insight-card-content {
+        padding: var(--space-4);
+    }
+
+    .insight-card-title {
+        font-size: var(--text-base);
+        margin-bottom: var(--space-2);
+    }
+
+    .insight-card-excerpt {
+        font-size: var(--text-xs);
+        margin-bottom: var(--space-3);
+    }
+
+    .insight-card-meta {
+        margin-bottom: var(--space-2);
+    }
+
+    .insight-card-date,
+    .insight-card-readtime {
+        font-size: 11px;
+    }
+
+    .insight-card-cta {
+        font-size: var(--text-xs);
+    }
+
+    .insight-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .insight-card-placeholder svg {
+        width: 40px;
+        height: 40px;
+    }
+}
