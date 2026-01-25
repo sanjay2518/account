@@ -232,7 +232,7 @@ const Industries = () => {
                 </section>
 
                 {/* CTA */}
-                <section className="industry-cta section-lg bg-dark">
+                <section className="industry-cta-section section-lg bg-dark">
                     <div className="container">
                         <div className="cta-content text-center">
                             <h2>Let's Discuss Your {industry.title} Needs</h2>

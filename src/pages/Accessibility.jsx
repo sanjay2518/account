@@ -172,7 +172,7 @@ const Accessibility = () => {
                                     <p><strong>Accessibility Support</strong></p>
                                     <p>Email: <a href="mailto:reliableprofessionals.co@gmail.com">reliableprofessionals.co@gmail.com</a></p>
                                     <p>Phone: <a href="tel:+918920473074">+91 8920473074</a></p>
-                                    <p>Address: 56, New Layal Pur, Dixit Gali, Delhi-51</p>
+                                    <p>Address: 56, New Layal Pur, Dixit Gali, Delhi -110051</p>
                                 </div>
                                 <p>
                                     We aim to respond to accessibility feedback within 2 business days and to

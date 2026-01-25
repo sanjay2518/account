@@ -9,13 +9,14 @@ import './About.css';
 import teamMember1 from '../assets/images/team-member-1.jpg';
 import teamMember2 from '../assets/images/team-member-2.png';
 import teamMember4 from '../assets/images/team-member-4.jpg';
+import teamMember5 from '../assets/images/team-member-5.jpg';
 
 const About = () => {
     const stats = [
         { value: 2026, suffix: '', label: 'Founded', icon: '🚀' },
         { value: 50, suffix: '+', label: 'Clients Served', icon: '👥' },
         { value: 100, suffix: '%', label: 'Client Satisfaction', icon: '⭐' },
-        { value: 4, suffix: '+', label: 'Team Members', icon: '👨‍💼' },
+        { value: 5, suffix: '+', label: 'Team Members', icon: '👨‍💼' },
     ];
 
     const values = [
@@ -59,11 +60,11 @@ const About = () => {
             email: 'tasleem@precisionaccounting.com'
         },
         {
-            name: 'Paras',
+            name: 'Paras Gupta',
             role: 'Software Engineer',
             bio: 'I\'m a Software Engineer passionate about building intelligent, scalable, and high-performance digital solutions. With a strong foundation in C++, Python, Web Development, and Machine Learning, I enjoy transforming complex problems into clean, real-world applications. My background in AI and Machine Learning from NSUT, New Delhi, has shaped the way I think about systems, data, and optimization. I thrive on writing efficient code, designing intuitive user experiences, and engineering solutions that balance logic with creativity. Having solved 700+ algorithmic challenges, problem-solving comes naturally to me. I\'m comfortable working across technologies, adapting quickly, and continuously pushing myself to build better, smarter systems. Driven by curiosity and growth, I\'m focused on evolving into a future-ready technologist who builds with purpose and impact.',
-            linkedin: '#',
-            email: 'paras@precisionaccounting.com'
+            linkedin: 'https://www.linkedin.com/in/paras--gupta',
+            email: 'paras.gupta.ws@gmail.com'
         },
         {
             name: 'Sanjay A',
@@ -71,7 +72,15 @@ const About = () => {
             image: teamMember4,
             bio: 'Creative and detail-oriented Full Stack Web Developer with a strong foundation in building responsive, scalable, and user-centric web applications. I work with HTML, CSS, JavaScript, React, Node.js, Python, Java, SQL, and MongoDB, focusing on clean code, performance, and real-world usability. I have hands-on experience developing full-stack projects, including an E-commerce platform, a French Learning Web Application, and an Emotion-Based Music Recommendation System that uses AI and real-time facial expression analysis to personalize user experiences. These projects strengthened my skills in REST APIs, database integration, and end-to-end application development. Alongside development, I bring experience in automation and cloud technologies, supported by certifications such as UiPath Certified Automation Developer – Associate and SnowPro Associate – Platform.',
             linkedin: '#',
-            email: 'sanjaya@precisionaccounting.com'
+            email: 'sanjayalagupandi@gmail.com'
+        },
+        {
+            name: 'Padmana',
+            role: 'Operations Head – Accounting & Finance',
+            image: teamMember5,
+            bio: 'Results-driven Accounting and Finance professional with a strong command over financial reporting, budgeting, forecasting, and compliance. Dedicated to transforming numbers into strategic business intelligence. With expertise in cost optimization, profit analysis, and operational financial control, I streamline accounting workflows, strengthen internal systems, and ensure data accuracy that drives confident decision-making. Passionate about financial strategy, automation, and scalable operations, I align financial precision with business growth—building systems that enhance transparency, efficiency, and long-term sustainability. As Operations Head, I don\'t just manage finances—I engineer financial excellence that powers performance, trust, and measurable success.',
+            linkedin: '#',
+            email: 'padmana@precisionaccounting.com'
         },
     ];
 
@@ -104,7 +113,7 @@ const About = () => {
                 subtitle="About Precision Accounting"
                 title="A Fresh Start in Financial Excellence – Est. 2026"
                 description="We are a passionate startup team committed to helping businesses achieve their financial goals through innovative solutions, modern technology, and personalized service."
-                primaryCTA={{ label: "Meet Our Team", path: "/about/leadership" }}
+                primaryCTA={{ label: "Meet Our Team", path: "/about#leadership" }}
                 secondaryCTA={{ label: "Our Services", path: "/services" }}
             />
 

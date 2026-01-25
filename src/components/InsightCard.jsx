@@ -30,11 +30,6 @@ const InsightCard = ({
                 </div>
 
                 <div className="insight-card-content">
-                    <div className="insight-card-meta">
-                        {date && <span className="insight-card-date">{date}</span>}
-                        {readTime && <span className="insight-card-readtime">{readTime}</span>}
-                    </div>
-
                     <h3 className="insight-card-title">{title}</h3>
 
                     {excerpt && (

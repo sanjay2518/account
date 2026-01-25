@@ -215,26 +215,21 @@
 
 /* Map Section */
 .map-section {
-    height: 400px;
+    width: 100%;
     background: var(--gray-200);
 }
 
-.map-placeholder {
+.map-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.map-image {
+    width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.map-content {
-    text-align: center;
-    color: var(--gray-500);
-}
-
-.map-content svg {
-    width: 60px;
-    height: 60px;
-    margin-bottom: var(--space-4);
+    object-fit: cover;
+    object-position: center;
 }
 
 /* FAQ Section */

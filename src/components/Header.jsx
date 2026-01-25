@@ -72,9 +72,10 @@ const Header = () => {
       submenu: [
         { label: 'All Insights', path: '/insights' },
         { label: 'Tax Updates', path: '/insights?category=tax' },
+        { label: 'Audit', path: '/insights?category=audit' },
+        { label: 'Advisory', path: '/insights?category=advisory' },
         { label: 'Industry Reports', path: '/insights?category=reports' },
         { label: 'Webinars', path: '/insights?category=webinars' },
-        { label: 'Resources', path: '/insights#resources' },
       ]
     },
     {

@@ -51,7 +51,7 @@ const Home = () => {
         { value: 2026, suffix: '', label: 'Founded', icon: '🚀' },
         { value: 50, suffix: '+', label: 'Clients Served', icon: '👥' },
         { value: 100, suffix: '%', label: 'Client Satisfaction', icon: '⭐' },
-        { value: 4, suffix: '+', label: 'Expert Team', icon: '👨‍💼' },
+        { value: 5, suffix: '+', label: 'Expert Team', icon: '👨‍💼' },
     ];
 
     const industries = [
@@ -93,24 +93,24 @@ const Home = () => {
 
     const testimonials = [
         {
-            text: "Precision Accounting has transformed how we manage our finances. Their strategic tax planning saved us over $200,000 in our first year working together.",
-            name: "Sarah Johnson",
+            text: "Precision Accounting has transformed how we manage our finances. Their strategic tax planning saved us over ₹15,00,000 in our first year working together.",
+            name: "Priya Sharma",
             role: "CEO",
-            company: "TechVentures Inc.",
+            company: "TechVentures India Pvt. Ltd.",
             rating: 5
         },
         {
             text: "The audit team was professional, thorough, and provided invaluable insights that helped strengthen our internal controls. Highly recommended!",
-            name: "Michael Chen",
+            name: "Rajesh Verma",
             role: "CFO",
             company: "Global Manufacturing Co.",
             rating: 5
         },
         {
             text: "Their payroll services have been a game-changer for our HR department. Accurate, on-time, and their support team is always there when we need them.",
-            name: "Emily Rodriguez",
+            name: "Anita Patel",
             role: "HR Director",
-            company: "Healthcare Solutions",
+            company: "Healthcare Solutions India",
             rating: 5
         },
     ];
