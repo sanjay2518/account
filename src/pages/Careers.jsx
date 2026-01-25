@@ -39,57 +39,21 @@ const Careers = () => {
     const jobs = [
         {
             id: 1,
-            title: 'Senior Audit Manager',
+            title: 'Accounting Intern',
             department: 'audit',
-            location: 'New York, NY',
-            type: 'Full-time',
-            experience: '8+ years',
-            path: '/careers/jobs/senior-audit-manager'
+            location: 'Delhi, India',
+            type: 'Internship',
+            experience: '0-1 years',
+            path: '/careers/jobs/accounting-intern'
         },
         {
             id: 2,
-            title: 'Tax Senior Associate',
-            department: 'tax',
-            location: 'Chicago, IL',
-            type: 'Full-time',
-            experience: '3-5 years',
-            path: '/careers/jobs/tax-senior-associate'
-        },
-        {
-            id: 3,
-            title: 'M&A Advisory Consultant',
-            department: 'advisory',
-            location: 'Los Angeles, CA',
-            type: 'Full-time',
-            experience: '5-7 years',
-            path: '/careers/jobs/ma-advisory-consultant'
-        },
-        {
-            id: 4,
-            title: 'Staff Accountant',
+            title: 'Tally Accountant',
             department: 'audit',
-            location: 'Boston, MA',
+            location: 'Delhi, India',
             type: 'Full-time',
-            experience: '0-2 years',
-            path: '/careers/jobs/staff-accountant'
-        },
-        {
-            id: 5,
-            title: 'International Tax Manager',
-            department: 'tax',
-            location: 'Remote',
-            type: 'Full-time',
-            experience: '6-8 years',
-            path: '/careers/jobs/international-tax-manager'
-        },
-        {
-            id: 6,
-            title: 'Operations Coordinator',
-            department: 'operations',
-            location: 'New York, NY',
-            type: 'Full-time',
-            experience: '2-4 years',
-            path: '/careers/jobs/operations-coordinator'
+            experience: '1+ years',
+            path: '/careers/jobs/tally-accountant'
         },
     ];
 
@@ -111,7 +75,7 @@ const Careers = () => {
                 subtitle="Join Our Team"
                 title="Build Your Career at Precision Accounting"
                 description="Join a team of passionate professionals who are committed to making a difference for our clients and communities."
-                primaryCTA={{ label: "View Open Positions", path: "#jobs" }}
+                primaryCTA={{ label: "View Open Positions", path: "#positions" }}
                 secondaryCTA={{ label: "Our Culture", path: "#culture" }}
             />
 
@@ -320,7 +284,7 @@ const Careers = () => {
                         <p>
                             Explore our open positions and take the first step toward an amazing career.
                         </p>
-                        <Link to="#jobs" className="btn btn-primary btn-lg">
+                        <Link to="#positions" className="btn btn-primary btn-lg">
                             View All Positions
                         </Link>
                     </div>

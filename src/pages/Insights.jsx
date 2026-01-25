@@ -287,14 +287,25 @@ const Insights = () => {
                     <div className="section-header text-center">
                         <span className="section-subtitle">Free Resources</span>
                         <h2>Helpful Tools & Guides</h2>
+                        <p className="section-description">
+                            Download our free resources to help you manage your business finances effectively.
+                        </p>
                     </div>
 
                     <div className="resources-grid">
                         <div className="resource-card">
                             <div className="resource-icon">📅</div>
-                            <h3>Tax Calendar 2025</h3>
-                            <p>Never miss an important tax deadline with our comprehensive calendar.</p>
-                            <a href="#" className="resource-link">
+                            <h3>Tax Calendar 2026</h3>
+                            <p>Never miss an important tax deadline with our comprehensive calendar covering all federal and GST filing dates.</p>
+                            <div className="resource-meta">
+                                <span className="resource-format">PDF</span>
+                                <span className="resource-size">~50 KB</span>
+                            </div>
+                            <a
+                                href="/resources/tax-calendar-2026.pdf"
+                                download="Tax-Calendar-2026.pdf"
+                                className="resource-link"
+                            >
                                 Download PDF
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
@@ -305,8 +316,16 @@ const Insights = () => {
                         <div className="resource-card">
                             <div className="resource-icon">📊</div>
                             <h3>Business Financial Checklist</h3>
-                            <p>Essential checklist to keep your business finances in order.</p>
-                            <a href="#" className="resource-link">
+                            <p>Essential daily, weekly, monthly, quarterly, and annual tasks to keep your business finances in perfect order.</p>
+                            <div className="resource-meta">
+                                <span className="resource-format">PDF</span>
+                                <span className="resource-size">~45 KB</span>
+                            </div>
+                            <a
+                                href="/resources/business-financial-checklist.pdf"
+                                download="Business-Financial-Checklist.pdf"
+                                className="resource-link"
+                            >
                                 Download PDF
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
@@ -317,8 +336,16 @@ const Insights = () => {
                         <div className="resource-card">
                             <div className="resource-icon">📖</div>
                             <h3>Small Business Tax Guide</h3>
-                            <p>Complete guide to understanding and managing your business taxes.</p>
-                            <a href="#" className="resource-link">
+                            <p>Complete guide covering tax obligations, record keeping, deductions, GST compliance, and tax planning strategies.</p>
+                            <div className="resource-meta">
+                                <span className="resource-format">PDF</span>
+                                <span className="resource-size">~60 KB</span>
+                            </div>
+                            <a
+                                href="/resources/small-business-tax-guide.pdf"
+                                download="Small-Business-Tax-Guide.pdf"
+                                className="resource-link"
+                            >
                                 Download PDF
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />

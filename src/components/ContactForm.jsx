@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { submitContactForm } from '../services/contactStorage';
+import emailjs from '@emailjs/browser';
 import './ContactForm.css';
 
 const ContactForm = ({ onSubmit }) => {
@@ -8,138 +8,86 @@ const ContactForm = ({ onSubmit }) => {
         email: '',
         phone: '',
         company: '',
-        service: '',
-        message: '',
-        subscribe: false
+        subject: '',
+        message: ''
     });
-
-    const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitted, setSubmitted] = useState(false);
-    const [submitError, setSubmitError] = useState(null);
-
-    const services = [
-        { value: '', label: 'Select a service' },
-        { value: 'audit', label: 'Audit & Assurance' },
-        { value: 'tax', label: 'Tax Services' },
-        { value: 'advisory', label: 'Financial Advisory' },
-        { value: 'bookkeeping', label: 'Bookkeeping' },
-        { value: 'payroll', label: 'Payroll Services' },
-        { value: 'consulting', label: 'Business Consulting' },
-        { value: 'other', label: 'Other' },
-    ];
-
-    const validateForm = () => {
-        const newErrors = {};
-
-        if (!formData.name.trim()) {
-            newErrors.name = 'Name is required';
-        }
-
-        if (!formData.email.trim()) {
-            newErrors.email = 'Email is required';
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            newErrors.email = 'Please enter a valid email';
-        }
-
-        if (!formData.message.trim()) {
-            newErrors.message = 'Message is required';
-        }
-
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
+    const [submitStatus, setSubmitStatus] = useState(null);
 
     const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: type === 'checkbox' ? checked : value
-        }));
-
-        if (errors[name]) {
-            setErrors(prev => ({ ...prev, [name]: '' }));
-        }
-        if (submitError) {
-            setSubmitError(null);
-        }
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setSubmitError(null);
-
-        if (!validateForm()) return;
-
         setIsSubmitting(true);
+        setSubmitStatus(null);
 
         try {
-            const result = await submitContactForm(formData);
-            console.log('Contact form submitted to database:', result);
+            // Send admin notification
+            const adminResponse = await emailjs.send(
+                'service_mzqdu0g',
+                'template_vokf2l1',
+                {
+                    full_name: formData.name,
+                    email_address: formData.email,
+                    phone_number: formData.phone,
+                    company_name: formData.company,
+                    service_interest: formData.subject,
+                    message: formData.message,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    company: formData.company,
+                    subject: formData.subject,
+                    service: formData.subject,
+                    interest: formData.subject
+                },
+                'LXsRg2HXQ8Q5TBqB-'
+            );
 
-            if (onSubmit) {
-                onSubmit(result.data);
-            }
+            // Send user acknowledgment
+            const userResponse = await emailjs.send(
+                'service_mzqdu0g',
+                'template_kpchqd1',
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    service_interest: formData.subject,
+                    service: formData.subject,
+                    interest: formData.subject
+                },
+                'LXsRg2HXQ8Q5TBqB-'
+            );
 
-            setSubmitted(true);
+            setSubmitStatus('success');
             setFormData({
                 name: '',
                 email: '',
                 phone: '',
                 company: '',
-                service: '',
-                message: '',
-                subscribe: false
+                subject: '',
+                message: ''
             });
+
+            if (onSubmit) {
+                onSubmit(formData);
+            }
         } catch (error) {
-            console.error('Error submitting form:', error);
-            setSubmitError(
-                error.message === 'Failed to fetch'
-                    ? 'Unable to connect to server. Please try again later.'
-                    : error.message || 'There was an error submitting your message. Please try again.'
-            );
+            console.error('EmailJS Error:', error);
+            setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
         }
     };
 
-    if (submitted) {
-        return (
-            <div className="contact-form-success">
-                <div className="success-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-                        <path d="M22 4L12 14.01l-3-3" />
-                    </svg>
-                </div>
-                <h3>Thank You!</h3>
-                <p>Your message has been received successfully.</p>
-                <p className="response-note">
-                    Our team will respond to you within 24 hours from:<br />
-                    <strong>reliableprofessionals.co@gmail.com</strong>
-                </p>
-                <p className="check-spam">Please check your spam folder if you don't receive our response.</p>
-                <button
-                    className="btn btn-primary"
-                    onClick={() => setSubmitted(false)}
-                >
-                    Send Another Message
-                </button>
-            </div>
-        );
-    }
-
     return (
         <form className="contact-form" onSubmit={handleSubmit}>
-            {submitError && (
-                <div className="form-error-banner">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-                    </svg>
-                    <span>{submitError}</span>
-                </div>
-            )}
-
             <div className="form-row">
                 <div className="form-group">
                     <label htmlFor="name">Full Name *</label>
@@ -149,12 +97,9 @@ const ContactForm = ({ onSubmit }) => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={errors.name ? 'error' : ''}
-                        placeholder="John Smith"
+                        required
                     />
-                    {errors.name && <span className="error-message">{errors.name}</span>}
                 </div>
-
                 <div className="form-group">
                     <label htmlFor="email">Email Address *</label>
                     <input
@@ -163,10 +108,8 @@ const ContactForm = ({ onSubmit }) => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={errors.email ? 'error' : ''}
-                        placeholder="john@company.com"
+                        required
                     />
-                    {errors.email && <span className="error-message">{errors.email}</span>}
                 </div>
             </div>
 
@@ -179,36 +122,36 @@ const ContactForm = ({ onSubmit }) => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="(555) 123-4567"
                     />
                 </div>
-
                 <div className="form-group">
-                    <label htmlFor="company">Company Name</label>
+                    <label htmlFor="company">Company</label>
                     <input
                         type="text"
                         id="company"
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        placeholder="Your Company Inc."
                     />
                 </div>
             </div>
 
             <div className="form-group">
-                <label htmlFor="service">Service Interest</label>
+                <label htmlFor="subject">Subject *</label>
                 <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
+                    required
                 >
-                    {services.map((service, index) => (
-                        <option key={index} value={service.value}>
-                            {service.label}
-                        </option>
-                    ))}
+                    <option value="">Select a subject</option>
+                    <option value="Tax Services">Tax Services</option>
+                    <option value="Accounting Services">Accounting Services</option>
+                    <option value="Audit Services">Audit Services</option>
+                    <option value="Business Advisory">Business Advisory</option>
+                    <option value="Payroll Services">Payroll Services</option>
+                    <option value="General Inquiry">General Inquiry</option>
                 </select>
             </div>
 
@@ -217,47 +160,33 @@ const ContactForm = ({ onSubmit }) => {
                 <textarea
                     id="message"
                     name="message"
+                    rows="5"
                     value={formData.message}
                     onChange={handleChange}
-                    className={errors.message ? 'error' : ''}
                     placeholder="Tell us about your needs..."
-                    rows={5}
-                />
-                {errors.message && <span className="error-message">{errors.message}</span>}
-            </div>
-
-            <div className="form-group checkbox-group">
-                <label className="checkbox-label">
-                    <input
-                        type="checkbox"
-                        name="subscribe"
-                        checked={formData.subscribe}
-                        onChange={handleChange}
-                    />
-                    <span className="checkbox-custom"></span>
-                    <span>Subscribe to our newsletter for tax updates and insights</span>
-                </label>
+                    required
+                ></textarea>
             </div>
 
             <button
                 type="submit"
-                className={`btn btn-primary btn-lg submit-btn ${isSubmitting ? 'submitting' : ''}`}
+                className="submit-btn"
                 disabled={isSubmitting}
             >
-                {isSubmitting ? (
-                    <>
-                        <span className="spinner"></span>
-                        Sending...
-                    </>
-                ) : (
-                    <>
-                        Send Message
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-                        </svg>
-                    </>
-                )}
+                {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
+
+            {submitStatus === 'success' && (
+                <div className="form-message success">
+                    Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                </div>
+            )}
+
+            {submitStatus === 'error' && (
+                <div className="form-message error">
+                    Sorry, there was an error sending your message. Please try again or contact us directly.
+                </div>
+            )}
         </form>
     );
 };

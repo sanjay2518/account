@@ -405,3 +405,142 @@
     color: var(--gray-400);
     margin-bottom: var(--space-8);
 }
+/* Job Detail Page Styling */
+.job-detail-page .responsibility-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #00D26A;
+}
+
+.job-detail-page .responsibility-item h4 {
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.job-detail-page .responsibility-item .number {
+    background: #00D26A;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-right: 0.75rem;
+}
+
+.job-detail-page .responsibility-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.job-detail-page .responsibility-item li {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+
+.job-detail-page .benefits-list,
+.job-detail-page .requirements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.job-detail-page .benefits-list li,
+.job-detail-page .requirements-list li {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.job-detail-page .benefits-list li:before {
+    content: "✓";
+    color: #00D26A;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.job-detail-page .requirements-list li:before {
+    content: "•";
+    color: #00D26A;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Professional Job Detail Styling */
+.job-detail-page .responsibility-section {
+    margin-bottom: 2rem;
+}
+
+.job-detail-page .responsibility-section h3 {
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #00D26A;
+    padding-bottom: 0.5rem;
+}
+
+.job-detail-page .responsibility-section ul {
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.job-detail-page .responsibility-section li {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.job-detail-page .requirements-list {
+    margin-left: 1rem;
+}
+
+.job-detail-page .requirements-list li {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+.job-detail-page .job-apply {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.job-detail-page .btn-outline {
+    background: transparent;
+    border: 2px solid #00D26A;
+    color: #00D26A;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.job-detail-page .btn-outline:hover {
+    background: #00D26A;
+    color: white;
+}
+.job-detail-page .btn-outline:hover {
+    color: #000 !important;
+}

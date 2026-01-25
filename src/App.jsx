@@ -9,12 +9,15 @@ import Industries from './pages/Industries';
 import Insights from './pages/Insights';
 import InsightDetail from './pages/InsightDetail';
 import Careers from './pages/Careers';
+import AccountingIntern from './pages/AccountingIntern';
+import TallyAccountant from './pages/TallyAccountant';
 import Contact from './pages/Contact';
 import Search from './pages/Search';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import CookieSettings from './pages/CookieSettings';
 import Accessibility from './pages/Accessibility';
+import Chatbot from './components/Chatbot';
 import './index.css';
 
 // Scroll to top on route change
@@ -47,6 +50,8 @@ function App() {
           <Route path="/insights/:slug" element={<InsightDetail />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/:section" element={<Careers />} />
+          <Route path="/careers/jobs/accounting-intern" element={<AccountingIntern />} />
+          <Route path="/careers/jobs/tally-accountant" element={<TallyAccountant />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/search" element={<Search />} />
           {/* Legal Pages */}
@@ -58,6 +63,7 @@ function App() {
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />
+        <Chatbot />
       </div>
     </Router>
   );

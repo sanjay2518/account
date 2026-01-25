@@ -48,10 +48,10 @@ const Home = () => {
     ];
 
     const stats = [
-        { value: 2026, suffix: '', label: 'Founded', icon: '🚀' },
         { value: 50, suffix: '+', label: 'Clients Served', icon: '👥' },
         { value: 100, suffix: '%', label: 'Client Satisfaction', icon: '⭐' },
         { value: 5, suffix: '+', label: 'Expert Team', icon: '👨‍💼' },
+        { value: 24, suffix: '/7', label: 'Support', icon: '🚀' },
     ];
 
     const industries = [
@@ -119,7 +119,7 @@ const Home = () => {
         <main className="home-page">
             {/* Hero Section */}
             <Hero
-                subtitle="Your Modern Financial Partner – Est. 2026"
+                subtitle="Your Modern Financial Partner"
                 title={<>Precision in Every <span>Number.</span> Excellence in Every <span>Solution.</span></>}
                 description="We are a fresh, innovative accounting startup providing comprehensive tax, and advisory services that help businesses achieve financial clarity and sustainable growth."
                 primaryCTA={{ label: "Get Started", path: "/contact" }}

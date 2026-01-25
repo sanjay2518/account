@@ -8,15 +8,16 @@ import './About.css';
 // Team Member Images
 import teamMember1 from '../assets/images/team-member-1.jpg';
 import teamMember2 from '../assets/images/team-member-2.png';
+import teamMember3 from '../assets/images/team-member-3.jpg';
 import teamMember4 from '../assets/images/team-member-4.jpg';
 import teamMember5 from '../assets/images/team-member-5.jpg';
 
 const About = () => {
     const stats = [
-        { value: 2026, suffix: '', label: 'Founded', icon: '🚀' },
         { value: 50, suffix: '+', label: 'Clients Served', icon: '👥' },
         { value: 100, suffix: '%', label: 'Client Satisfaction', icon: '⭐' },
         { value: 5, suffix: '+', label: 'Team Members', icon: '👨‍💼' },
+        { value: 24, suffix: '/7', label: 'Support', icon: '🚀' },
     ];
 
     const values = [
@@ -52,16 +53,17 @@ const About = () => {
             email: 'sanjay@precisionaccounting.com'
         },
         {
-            name: 'Tasleem Shah',
-            role: 'Lead Generation & Virtual Assistant – Admin Support',
-            image: teamMember2,
-            bio: 'Provides reliable support in lead generation, virtual assistance, and administrative operations. Responsible for prospect research, data collection and verification, CRM-ready lead preparation, calendar and email support, and day-to-day administrative tasks to help the firm operate efficiently and connect with potential clients.',
+            name: 'Padmana Chopra',
+            role: 'Operations Head – Accounting & Finance',
+            image: teamMember5,
+            bio: 'Results-driven Accounting and Finance professional with a strong command over financial reporting, budgeting, forecasting, and compliance. Dedicated to transforming numbers into strategic business intelligence. With expertise in cost optimization, profit analysis, and operational financial control, I streamline accounting workflows, strengthen internal systems, and ensure data accuracy that drives confident decision-making. Passionate about financial strategy, automation, and scalable operations, I align financial precision with business growth—building systems that enhance transparency, efficiency, and long-term sustainability. As Operations Head, I don\'t just manage finances—I engineer financial excellence that powers performance, trust, and measurable success.',
             linkedin: '#',
-            email: 'tasleem@precisionaccounting.com'
+            email: 'padmana@precisionaccounting.com'
         },
         {
             name: 'Paras Gupta',
             role: 'Software Engineer',
+            image: teamMember3,
             bio: 'I\'m a Software Engineer passionate about building intelligent, scalable, and high-performance digital solutions. With a strong foundation in C++, Python, Web Development, and Machine Learning, I enjoy transforming complex problems into clean, real-world applications. My background in AI and Machine Learning from NSUT, New Delhi, has shaped the way I think about systems, data, and optimization. I thrive on writing efficient code, designing intuitive user experiences, and engineering solutions that balance logic with creativity. Having solved 700+ algorithmic challenges, problem-solving comes naturally to me. I\'m comfortable working across technologies, adapting quickly, and continuously pushing myself to build better, smarter systems. Driven by curiosity and growth, I\'m focused on evolving into a future-ready technologist who builds with purpose and impact.',
             linkedin: 'https://www.linkedin.com/in/paras--gupta',
             email: 'paras.gupta.ws@gmail.com'
@@ -75,12 +77,12 @@ const About = () => {
             email: 'sanjayalagupandi@gmail.com'
         },
         {
-            name: 'Padmana',
-            role: 'Operations Head – Accounting & Finance',
-            image: teamMember5,
-            bio: 'Results-driven Accounting and Finance professional with a strong command over financial reporting, budgeting, forecasting, and compliance. Dedicated to transforming numbers into strategic business intelligence. With expertise in cost optimization, profit analysis, and operational financial control, I streamline accounting workflows, strengthen internal systems, and ensure data accuracy that drives confident decision-making. Passionate about financial strategy, automation, and scalable operations, I align financial precision with business growth—building systems that enhance transparency, efficiency, and long-term sustainability. As Operations Head, I don\'t just manage finances—I engineer financial excellence that powers performance, trust, and measurable success.',
+            name: 'Tasleem Shah',
+            role: 'Lead Generation & Virtual Assistant – Admin Support',
+            image: teamMember2,
+            bio: 'Provides reliable support in lead generation, virtual assistance, and administrative operations. Responsible for prospect research, data collection and verification, CRM-ready lead preparation, calendar and email support, and day-to-day administrative tasks to help the firm operate efficiently and connect with potential clients.',
             linkedin: '#',
-            email: 'padmana@precisionaccounting.com'
+            email: 'tasleem@precisionaccounting.com'
         },
     ];
 
@@ -111,8 +113,8 @@ const About = () => {
             <Hero
                 size="medium"
                 subtitle="About Precision Accounting"
-                title="A Fresh Start in Financial Excellence – Est. 2026"
-                description="We are a passionate startup team committed to helping businesses achieve their financial goals through innovative solutions, modern technology, and personalized service."
+                title="A Fresh Start in Financial Excellence"
+                description="We are a passionate team committed to helping businesses achieve their financial goals through innovative solutions, modern technology, and personalized service."
                 primaryCTA={{ label: "Meet Our Team", path: "/about#leadership" }}
                 secondaryCTA={{ label: "Our Services", path: "/services" }}
             />
@@ -130,7 +132,7 @@ const About = () => {
                                 informed decisions and achieve sustainable growth.
                             </p>
                             <p>
-                                As a 2026 startup, we combine fresh perspectives with modern technology
+                                As a startup, we combine fresh perspectives with modern technology
                                 to deliver world-class financial expertise. Our approach blends innovation
                                 with a genuine understanding of your business challenges.
                             </p>
@@ -250,7 +252,7 @@ const About = () => {
                             <span className="section-subtitle">Our Commitments</span>
                             <h2>What We Stand For</h2>
                             <p>
-                                As a 2026 startup, we are committed to building trust through
+                                As a Startup, we are committed to building trust through
                                 transparency, innovation, and exceptional service.
                             </p>
                         </div>
