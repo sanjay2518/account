@@ -46,7 +46,6 @@ function App() {
           <Route path="/industries" element={<Industries />} />
           <Route path="/industries/:industryType" element={<Industries />} />
           <Route path="/insights" element={<Insights />} />
-          <Route path="/insights/webinars/:slug" element={<InsightDetail />} />
           <Route path="/insights/:slug" element={<InsightDetail />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/:section" element={<Careers />} />

@@ -1,30 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './Stats.css';
 
-const Stats = ({ stats, variant = 'default', title, subtitle }) => {
-    const [isVisible, setIsVisible] = useState(false);
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { threshold: 0.3 }
-        );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
-        return () => observer.disconnect();
-    }, []);
+const Stats = ({ stats = defaultStats, variant = 'default', title, subtitle }) => {
+    const [ref, isVisible] = useScrollAnimation(0.2);
 
     return (
-        <section ref={sectionRef} className={`stats-section stats-${variant}`}>
+        <section ref={ref} className={`stats-section stats-${variant} ${isVisible ? 'visible' : ''}`}>
             <div className="container">
                 {(title || subtitle) && (
                     <div className="stats-header">
@@ -85,5 +67,13 @@ const CountUp = ({ end, duration = 2000, suffix = '', prefix = '' }) => {
 
     return <>{prefix}{count.toLocaleString()}{suffix}</>;
 };
+
+// Default stats data
+const defaultStats = [
+    { value: 500, suffix: '+', label: 'Clients Served', icon: '👥' },
+    { value: 15, suffix: '+', label: 'Years Experience', icon: '⭐' },
+    { value: 98, suffix: '%', label: 'Client Satisfaction', icon: '💯' },
+    { value: 50, suffix: '+', label: 'Managed Assets', icon: '💼', prefix: '$' }
+];
 
 export default Stats;

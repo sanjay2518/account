@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { Search, Calendar, BarChart3, BookOpen } from 'lucide-react';
 import Hero from '../components/Hero';
 import InsightCard from '../components/InsightCard';
 import './Insights.css';
@@ -59,7 +60,6 @@ const Insights = () => {
         { value: 'audit', label: 'Audit' },
         { value: 'advisory', label: 'Advisory' },
         { value: 'industry', label: 'Industry Reports' },
-        { value: 'webinar', label: 'Webinars' },
     ];
 
     const insights = [
@@ -110,13 +110,13 @@ const Insights = () => {
         },
         {
             id: 5,
-            title: 'Webinar: R&D Tax Credit Maximization',
-            excerpt: 'Join our experts as they discuss strategies to maximize your R&D tax credits while maintaining compliance.',
-            category: 'webinar',
-            categoryLabel: 'Webinar',
+            title: 'R&D Tax Credit Maximization Guide',
+            excerpt: 'Expert strategies to maximize your R&D tax credits while maintaining full compliance with all requirements.',
+            category: 'tax',
+            categoryLabel: 'Tax Update',
             date: 'January 6, 2026',
-            readTime: '45 min watch',
-            path: '/insights/webinars/rd-tax-credit',
+            readTime: '7 min read',
+            path: '/insights/rd-tax-credit',
             image: webinarImg
         },
         {
@@ -235,7 +235,7 @@ const Insights = () => {
                         </div>
                     ) : (
                         <div className="no-results">
-                            <div className="no-results-icon">🔍</div>
+                            <div className="no-results-icon"><Search size={48} color="var(--accent-green)" strokeWidth={1.5} /></div>
                             <h3>No results found</h3>
                             <p>Try adjusting your search or filter criteria.</p>
                             <button
@@ -294,7 +294,7 @@ const Insights = () => {
 
                     <div className="resources-grid">
                         <div className="resource-card">
-                            <div className="resource-icon">📅</div>
+                            <div className="resource-icon"><Calendar size={32} color="#00D26A" strokeWidth={1.8} /></div>
                             <h3>Tax Calendar 2026</h3>
                             <p>Never miss an important tax deadline with our comprehensive calendar covering all federal and GST filing dates.</p>
                             <div className="resource-meta">
@@ -314,7 +314,7 @@ const Insights = () => {
                         </div>
 
                         <div className="resource-card">
-                            <div className="resource-icon">📊</div>
+                            <div className="resource-icon"><BarChart3 size={32} color="#00D26A" strokeWidth={1.8} /></div>
                             <h3>Business Financial Checklist</h3>
                             <p>Essential daily, weekly, monthly, quarterly, and annual tasks to keep your business finances in perfect order.</p>
                             <div className="resource-meta">
@@ -334,7 +334,7 @@ const Insights = () => {
                         </div>
 
                         <div className="resource-card">
-                            <div className="resource-icon">📖</div>
+                            <div className="resource-icon"><BookOpen size={32} color="#00D26A" strokeWidth={1.8} /></div>
                             <h3>Small Business Tax Guide</h3>
                             <p>Complete guide covering tax obligations, record keeping, deductions, GST compliance, and tax planning strategies.</p>
                             <div className="resource-meta">

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { Wallet, Hospital, BookOpen, Palmtree, Briefcase, Home } from 'lucide-react';
 import Hero from '../components/Hero';
 import './Careers.css';
 
@@ -28,12 +29,12 @@ const Careers = () => {
     ];
 
     const benefits = [
-        { icon: '💰', title: 'Competitive Compensation', description: 'Industry-leading salaries and annual bonuses based on performance.' },
-        { icon: '🏥', title: 'Health & Wellness', description: 'Comprehensive medical, dental, and vision coverage for you and your family.' },
-        { icon: '📚', title: 'Learning & Development', description: 'Continuous training, CPA support, and professional development opportunities.' },
-        { icon: '🏖️', title: 'Generous PTO', description: 'Flexible time off, holidays, and sabbatical programs for work-life balance.' },
-        { icon: '💼', title: 'Retirement Benefits', description: '401(k) with company match and financial planning resources.' },
-        { icon: '🏠', title: 'Flexible Work', description: 'Hybrid work arrangements and remote work opportunities.' },
+        { icon: <Wallet size={28} color="#00D26A" strokeWidth={1.8} />, title: 'Competitive Compensation', description: 'Industry-leading salaries and annual bonuses based on performance.' },
+        { icon: <Hospital size={28} color="#00D26A" strokeWidth={1.8} />, title: 'Health & Wellness', description: 'Comprehensive medical, dental, and vision coverage for you and your family.' },
+        { icon: <BookOpen size={28} color="#00D26A" strokeWidth={1.8} />, title: 'Learning & Development', description: 'Continuous training, CPA support, and professional development opportunities.' },
+        { icon: <Palmtree size={28} color="#00D26A" strokeWidth={1.8} />, title: 'Generous PTO', description: 'Flexible time off, holidays, and sabbatical programs for work-life balance.' },
+        { icon: <Briefcase size={28} color="#00D26A" strokeWidth={1.8} />, title: 'Retirement Benefits', description: '401(k) with company match and financial planning resources.' },
+        { icon: <Home size={28} color="#00D26A" strokeWidth={1.8} />, title: 'Flexible Work', description: 'Hybrid work arrangements and remote work opportunities.' },
     ];
 
     const jobs = [
@@ -100,7 +101,7 @@ const Careers = () => {
                         </div>
                         <div className="why-join-image">
                             <div className="image-placeholder">
-                                <span>👥</span>
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg></span>
                             </div>
                         </div>
                     </div>

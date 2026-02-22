@@ -1,26 +1,31 @@
 import { Link } from 'react-router-dom';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './ServiceCard.css';
 
 const ServiceCard = ({
     icon,
     title,
     description,
-    path,
+    path = '/services',
     tag,
     variant = 'default',
-    size = 'medium'
+    size = 'medium',
+    delay = '0s'
 }) => {
+    const [ref, isVisible] = useScrollAnimation(0.1);
+
     return (
-        <Link to={path} className={`service-card service-card-${variant} service-card-${size}`}>
+        <Link 
+            ref={ref}
+            to={path} 
+            className={`service-card service-card-${variant} service-card-${size} scroll-animate ${isVisible ? 'visible' : ''}`}
+            style={{ animationDelay: delay }}
+        >
             <div className="service-card-inner">
                 {tag && <span className="service-card-tag">{tag}</span>}
 
                 <div className="service-card-icon">
-                    {typeof icon === 'string' ? (
-                        <span className="icon-emoji">{icon}</span>
-                    ) : (
-                        icon
-                    )}
+                    {icon}
                 </div>
 
                 <h3 className="service-card-title">{title}</h3>

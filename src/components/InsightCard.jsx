@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './InsightCard.css';
 
 const InsightCard = ({
@@ -8,11 +9,18 @@ const InsightCard = ({
     category,
     date,
     readTime,
-    path,
-    featured = false
+    path = '/insights',
+    featured = false,
+    delay = '0s'
 }) => {
+    const [ref, isVisible] = useScrollAnimation(0.1);
+
     return (
-        <article className={`insight-card ${featured ? 'insight-card-featured' : ''}`}>
+        <article 
+            ref={ref}
+            className={`insight-card ${featured ? 'insight-card-featured' : ''} scroll-animate ${isVisible ? 'visible' : ''}`}
+            style={{ animationDelay: delay }}
+        >
             <Link to={path} className="insight-card-link">
                 <div className="insight-card-image">
                     {image ? (

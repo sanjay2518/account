@@ -64,7 +64,7 @@ const Footer = () => {
         resources: [
             { label: 'Insights', path: '/insights' },
             { label: 'Tax Updates', path: '/insights?category=tax' },
-            { label: 'Webinars', path: '/insights?category=webinar' },
+            { label: 'Industry Reports', path: '/insights?category=reports' },
             { label: 'Careers', path: '/careers' },
             { label: 'Contact Us', path: '/contact' },
         ],

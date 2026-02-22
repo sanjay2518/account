@@ -1,8 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Users, Star, UserCog, Rocket, Target, Lightbulb, Handshake, Award, Zap, CheckCircle, Building2 } from 'lucide-react';
 import Hero from '../components/Hero';
 import Stats from '../components/Stats';
 import TeamCard from '../components/TeamCard';
+import AnimateOnScroll from '../components/AnimateOnScroll';
 import './About.css';
 
 // Team Member Images
@@ -14,30 +16,30 @@ import teamMember5 from '../assets/images/team-member-5.jpg';
 
 const About = () => {
     const stats = [
-        { value: 50, suffix: '+', label: 'Clients Served', icon: '👥' },
-        { value: 100, suffix: '%', label: 'Client Satisfaction', icon: '⭐' },
-        { value: 5, suffix: '+', label: 'Team Members', icon: '👨‍💼' },
-        { value: 24, suffix: '/7', label: 'Support', icon: '🚀' },
+        { value: 50, suffix: '+', label: 'Clients Served', icon: <Users size={26} color="#fff" strokeWidth={1.8} /> },
+        { value: 100, suffix: '%', label: 'Client Satisfaction', icon: <Star size={26} color="#fff" strokeWidth={1.8} /> },
+        { value: 6, suffix: '+', label: 'Team Members', icon: <UserCog size={26} color="#fff" strokeWidth={1.8} /> },
+        { value: 24, suffix: '/7', label: 'Support', icon: <Rocket size={26} color="#fff" strokeWidth={1.8} /> },
     ];
 
     const values = [
         {
-            icon: '🎯',
+            icon: <Target size={28} color="#00D26A" strokeWidth={1.8} />,
             title: 'Integrity',
             description: 'We uphold the highest ethical standards in everything we do, ensuring trust and transparency in all client relationships.'
         },
         {
-            icon: '💡',
+            icon: <Lightbulb size={28} color="#00D26A" strokeWidth={1.8} />,
             title: 'Innovation',
             description: 'We continuously embrace new technologies and methodologies to deliver cutting-edge solutions for our clients.'
         },
         {
-            icon: '🤝',
+            icon: <Handshake size={28} color="#00D26A" strokeWidth={1.8} />,
             title: 'Collaboration',
             description: 'We work as partners with our clients, understanding their goals and delivering personalized service.'
         },
         {
-            icon: '⭐',
+            icon: <Award size={28} color="#00D26A" strokeWidth={1.8} />,
             title: 'Excellence',
             description: 'We are committed to delivering the highest quality work, exceeding expectations at every opportunity.'
         },
@@ -84,6 +86,14 @@ const About = () => {
             linkedin: '#',
             email: 'tasleem@precisionaccounting.com'
         },
+        {
+            name: 'Nikhil',
+            role: 'Chartered Accountant',
+            image: null,
+            bio: 'A Chartered Accountant with a relentless focus on precision, compliance, and business growth. Helps startups, founders, freelancers, and international clients bring clarity to their finances and confidence to their decisions.\n\nExpertise spans accounting, taxation, GST, audits, and corporate compliances—delivered with a strong commercial mindset. Doesn\'t just prepare numbers; interprets them, challenges them, and turns them into insights that actually drive results.\n\nBacked by advanced skills in Excel, automation, and Power BI, combines financial expertise with technology to deliver fast, accurate, and decision-ready reporting.\n\nClients work with Nikhil for one reason: reliability without excuses. Operates as a long-term financial partner—proactive, detail-obsessed, and always ahead of deadlines.\n\nIf you want your finances handled with absolute seriousness and strategic intent, you\'re in the right place.',
+            linkedin: '#',
+            email: 'nikhil@precisionaccounting.com'
+        },
     ];
 
     const timeline = [
@@ -123,45 +133,49 @@ const About = () => {
             <section className="mission-section section-lg">
                 <div className="container">
                     <div className="mission-grid">
-                        <div className="mission-content">
-                            <span className="section-subtitle">Our Mission</span>
-                            <h2>Empowering Businesses Through Financial Clarity</h2>
-                            <p>
-                                At Precision Accounting, our mission is to provide exceptional accounting,
-                                tax, and advisory services that empower startups and growing businesses to make
-                                informed decisions and achieve sustainable growth.
-                            </p>
-                            <p>
-                                As a startup, we combine fresh perspectives with modern technology
-                                to deliver world-class financial expertise. Our approach blends innovation
-                                with a genuine understanding of your business challenges.
-                            </p>
-                            <div className="mission-features">
-                                <div className="feature">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                                    </svg>
-                                    <span>Personalized Service</span>
-                                </div>
-                                <div className="feature">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                                    </svg>
-                                    <span>Industry Expertise</span>
-                                </div>
-                                <div className="feature">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                                    </svg>
-                                    <span>Proactive Guidance</span>
+                        <AnimateOnScroll animation="slide-left" duration={1}>
+                            <div className="mission-content">
+                                <span className="section-subtitle">Our Mission</span>
+                                <h2>Empowering Businesses Through Financial Clarity</h2>
+                                <p>
+                                    At Precision Accounting, our mission is to provide exceptional accounting,
+                                    tax, and advisory services that empower startups and growing businesses to make
+                                    informed decisions and achieve sustainable growth.
+                                </p>
+                                <p>
+                                    As a startup, we combine fresh perspectives with modern technology
+                                    to deliver world-class financial expertise. Our approach blends innovation
+                                    with a genuine understanding of your business challenges.
+                                </p>
+                                <div className="mission-features">
+                                    <div className="feature">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                        </svg>
+                                        <span>Personalized Service</span>
+                                    </div>
+                                    <div className="feature">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                        </svg>
+                                        <span>Industry Expertise</span>
+                                    </div>
+                                    <div className="feature">
+                                        <svg viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                        </svg>
+                                        <span>Proactive Guidance</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="mission-image">
-                            <div className="image-placeholder">
-                                <span>🏢</span>
+                        </AnimateOnScroll>
+                        <AnimateOnScroll animation="slide-right" duration={1} delay={0.2}>
+                            <div className="mission-image">
+                                <div className="image-placeholder">
+                                    <Building2 size={48} color="var(--accent-green)" strokeWidth={1.5} />
+                                </div>
                             </div>
-                        </div>
+                        </AnimateOnScroll>
                     </div>
                 </div>
             </section>
@@ -184,11 +198,13 @@ const About = () => {
 
                     <div className="values-grid">
                         {values.map((value, index) => (
-                            <div key={index} className="value-card">
-                                <span className="value-icon">{value.icon}</span>
-                                <h3>{value.title}</h3>
-                                <p>{value.description}</p>
-                            </div>
+                            <AnimateOnScroll key={index} animation="fade-up" stagger={0.15} index={index}>
+                                <div className="value-card">
+                                    <span className="value-icon">{value.icon}</span>
+                                    <h3>{value.title}</h3>
+                                    <p>{value.description}</p>
+                                </div>
+                            </AnimateOnScroll>
                         ))}
                     </div>
                 </div>
@@ -204,15 +220,17 @@ const About = () => {
 
                     <div className="timeline">
                         {timeline.map((item, index) => (
-                            <div key={index} className="timeline-item">
-                                <div className="timeline-marker">
-                                    <span className="timeline-year">{item.year}</span>
+                            <AnimateOnScroll key={index} animation="fade-up" stagger={0.2} index={index}>
+                                <div className="timeline-item">
+                                    <div className="timeline-marker">
+                                        <span className="timeline-year">{item.year}</span>
+                                    </div>
+                                    <div className="timeline-content">
+                                        <h4>{item.title}</h4>
+                                        <p>{item.description}</p>
+                                    </div>
                                 </div>
-                                <div className="timeline-content">
-                                    <h4>{item.title}</h4>
-                                    <p>{item.description}</p>
-                                </div>
-                            </div>
+                            </AnimateOnScroll>
                         ))}
                     </div>
                 </div>
@@ -232,7 +250,9 @@ const About = () => {
 
                     <div className="leadership-grid">
                         {leadership.map((member, index) => (
-                            <TeamCard key={index} {...member} />
+                            <AnimateOnScroll key={index} animation="scale-up" stagger={0.12} index={index}>
+                                <TeamCard {...member} />
+                            </AnimateOnScroll>
                         ))}
                     </div>
 
@@ -259,22 +279,22 @@ const About = () => {
 
                         <div className="awards-grid">
                             <div className="award-item">
-                                <div className="award-icon">🚀</div>
+                                <div className="award-icon"><Rocket size={28} color="#00D26A" strokeWidth={1.8} /></div>
                                 <h4>Innovation Focus</h4>
                                 <p>Modern, tech-driven solutions</p>
                             </div>
                             <div className="award-item">
-                                <div className="award-icon">💯</div>
+                                <div className="award-icon"><CheckCircle size={28} color="#00D26A" strokeWidth={1.8} /></div>
                                 <h4>Client-First Approach</h4>
                                 <p>100% satisfaction commitment</p>
                             </div>
                             <div className="award-item">
-                                <div className="award-icon">⚡</div>
+                                <div className="award-icon"><Zap size={28} color="#00D26A" strokeWidth={1.8} /></div>
                                 <h4>Tech-Driven Solutions</h4>
                                 <p>AI & cloud-powered services</p>
                             </div>
                             <div className="award-item">
-                                <div className="award-icon">✅</div>
+                                <div className="award-icon"><Award size={28} color="#00D26A" strokeWidth={1.8} /></div>
                                 <h4>Quality Assurance</h4>
                                 <p>Accuracy in every detail</p>
                             </div>

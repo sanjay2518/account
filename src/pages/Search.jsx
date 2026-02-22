@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { Briefcase, Building2, Newspaper, FileText, Download, Search as SearchIcon, Users } from 'lucide-react';
 import Hero from '../components/Hero';
 import './Search.css';
 
@@ -89,13 +90,13 @@ const Search = () => {
 
     const getTypeIcon = (type) => {
         const icons = {
-            'Service': '💼',
-            'Industry': '🏢',
-            'Insight': '📰',
-            'Page': '📄',
-            'Resource': '📥'
+            'Service': <Briefcase size={16} />,
+            'Industry': <Building2 size={16} />,
+            'Insight': <Newspaper size={16} />,
+            'Page': <FileText size={16} />,
+            'Resource': <Download size={16} />
         };
-        return icons[type] || '📄';
+        return icons[type] || <FileText size={16} />;
     };
 
     const getTypeColor = (type) => {
@@ -154,7 +155,7 @@ const Search = () => {
                         </>
                     ) : query ? (
                         <div className="no-results">
-                            <div className="no-results-icon">🔍</div>
+                            <div className="no-results-icon"><SearchIcon size={48} color="var(--accent-green)" strokeWidth={1.5} /></div>
                             <h3>No results found for "{query}"</h3>
                             <p>Try different keywords or browse our sections below.</p>
 
@@ -173,19 +174,19 @@ const Search = () => {
                                 <h4>Quick Links</h4>
                                 <div className="quick-links-grid">
                                     <Link to="/services" className="quick-link">
-                                        <span>💼</span>
+                                        <span><Briefcase size={20} /></span>
                                         <span>Our Services</span>
                                     </Link>
                                     <Link to="/industries" className="quick-link">
-                                        <span>🏢</span>
+                                        <span><Building2 size={20} /></span>
                                         <span>Industries</span>
                                     </Link>
                                     <Link to="/insights" className="quick-link">
-                                        <span>📰</span>
+                                        <span><Newspaper size={20} /></span>
                                         <span>Insights</span>
                                     </Link>
                                     <Link to="/contact" className="quick-link">
-                                        <span>📞</span>
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg></span>
                                         <span>Contact Us</span>
                                     </Link>
                                 </div>
@@ -193,7 +194,7 @@ const Search = () => {
                         </div>
                     ) : (
                         <div className="empty-search">
-                            <div className="empty-icon">🔎</div>
+                            <div className="empty-icon"><SearchIcon size={48} color="var(--accent-green)" strokeWidth={1.5} /></div>
                             <h3>Start Searching</h3>
                             <p>Use the search bar above to find what you're looking for.</p>
 
@@ -201,22 +202,22 @@ const Search = () => {
                                 <h4>Or Browse Our Sections</h4>
                                 <div className="browse-grid">
                                     <Link to="/services" className="browse-card">
-                                        <span className="browse-icon">💼</span>
+                                        <span className="browse-icon"><Briefcase size={24} /></span>
                                         <h5>Services</h5>
                                         <p>Explore our accounting and advisory services</p>
                                     </Link>
                                     <Link to="/industries" className="browse-card">
-                                        <span className="browse-icon">🏢</span>
+                                        <span className="browse-icon"><Building2 size={24} /></span>
                                         <h5>Industries</h5>
                                         <p>Industry-specific financial solutions</p>
                                     </Link>
                                     <Link to="/insights" className="browse-card">
-                                        <span className="browse-icon">📰</span>
+                                        <span className="browse-icon"><Newspaper size={24} /></span>
                                         <h5>Insights</h5>
                                         <p>Latest articles and thought leadership</p>
                                     </Link>
                                     <Link to="/careers" className="browse-card">
-                                        <span className="browse-icon">👥</span>
+                                        <span className="browse-icon"><Users size={24} /></span>
                                         <h5>Careers</h5>
                                         <p>Join our team of professionals</p>
                                     </Link>

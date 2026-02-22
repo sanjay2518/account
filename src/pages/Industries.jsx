@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import { Hospital, Monitor, Factory, Building2, ShoppingCart, Handshake, BarChart3, FileText, Briefcase } from 'lucide-react';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import './Industries.css';
@@ -8,7 +9,7 @@ const Industries = () => {
 
     const allIndustries = {
         healthcare: {
-            icon: '🏥',
+            icon: <Hospital size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Healthcare',
             tagline: 'Specialized solutions for healthcare providers',
             description: 'We understand the unique financial challenges facing healthcare organizations, from regulatory compliance to revenue cycle management.',
@@ -26,7 +27,7 @@ const Industries = () => {
             ]
         },
         technology: {
-            icon: '💻',
+            icon: <Monitor size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Technology',
             tagline: 'Fueling growth for tech innovators',
             description: 'From startups to established tech companies, we provide the financial expertise needed to scale successfully.',
@@ -44,7 +45,7 @@ const Industries = () => {
             ]
         },
         manufacturing: {
-            icon: '🏭',
+            icon: <Factory size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Manufacturing',
             tagline: 'Precision accounting for precision manufacturing',
             description: 'We help manufacturers optimize operations, manage costs, and navigate the complexities of global supply chains.',
@@ -62,7 +63,7 @@ const Industries = () => {
             ]
         },
         'real-estate': {
-            icon: '🏢',
+            icon: <Building2 size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Real Estate',
             tagline: 'Building value in real estate investments',
             description: 'Our real estate specialists understand the unique accounting, tax, and advisory needs of property owners and investors.',
@@ -80,7 +81,7 @@ const Industries = () => {
             ]
         },
         retail: {
-            icon: '🛒',
+            icon: <ShoppingCart size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Retail',
             tagline: 'Supporting retail success',
             description: 'We help retailers navigate the rapidly changing landscape with actionable financial insights and strategic guidance.',
@@ -98,7 +99,7 @@ const Industries = () => {
             ]
         },
         'non-profit': {
-            icon: '🤝',
+            icon: <Handshake size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Non-Profit',
             tagline: 'Maximizing impact for mission-driven organizations',
             description: 'We help non-profits maintain compliance, improve efficiency, and focus on their mission.',
@@ -184,19 +185,19 @@ const Industries = () => {
 
                         <div className="services-grid grid grid-cols-3">
                             <ServiceCard
-                                icon="📊"
+                                icon={<BarChart3 size={32} color="#fff" strokeWidth={1.8} />}
                                 title="Audit & Assurance"
                                 description={`Specialized audit services for ${industry.title.toLowerCase()} organizations.`}
                                 path="/services/audit"
                             />
                             <ServiceCard
-                                icon="📑"
+                                icon={<FileText size={32} color="#fff" strokeWidth={1.8} />}
                                 title="Tax Services"
                                 description={`Industry-specific tax planning and compliance for ${industry.title.toLowerCase()}.`}
                                 path="/services/tax"
                             />
                             <ServiceCard
-                                icon="💼"
+                                icon={<Briefcase size={32} color="#fff" strokeWidth={1.8} />}
                                 title="Advisory"
                                 description={`Strategic guidance tailored to the ${industry.title.toLowerCase()} sector.`}
                                 path="/services/advisory"

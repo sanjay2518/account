@@ -231,20 +231,20 @@ const InsightDetail = () => {
                 <p>The healthcare financial landscape in 2026 presents both challenges and opportunities. Organizations that adapt quickly and strategically will be best positioned for success.</p>
             `
         },
-        'webinars/rd-tax-credit': {
+        'rd-tax-credit': {
             id: 5,
-            title: 'Webinar: R&D Tax Credit Maximization',
-            category: 'Webinar',
+            title: 'R&D Tax Credit Maximization Guide',
+            category: 'Tax Update',
             date: 'January 6, 2026',
-            readTime: '45 min watch',
+            readTime: '7 min read',
             author: 'Precision Accounting Team',
             image: webinarImg,
-            excerpt: 'Join our experts as they discuss strategies to maximize your R&D tax credits while maintaining compliance.',
+            excerpt: 'Expert strategies to maximize your R&D tax credits while maintaining full compliance with all requirements.',
             content: `
-                <h2>About This Webinar</h2>
-                <p>In this comprehensive 45-minute webinar, our tax experts share insights on how businesses can maximize their Research and Development (R&D) tax credits while ensuring full compliance with all requirements.</p>
+                <h2>Understanding R&D Tax Credits</h2>
+                <p>The Research and Development (R&D) tax credit is one of the most valuable incentives available to businesses engaged in innovation. This guide shares insights on how businesses can maximize their R&D tax credits while ensuring full compliance with all requirements.</p>
 
-                <h2>What You'll Learn</h2>
+                <h2>What Qualifies as R&D?</h2>
                 <ul>
                     <li>Understanding what qualifies as R&D for tax credit purposes</li>
                     <li>Documentation requirements for successful claims</li>
@@ -253,8 +253,8 @@ const InsightDetail = () => {
                     <li>Recent changes in R&D tax credit regulations</li>
                 </ul>
 
-                <h2>Who Should Attend</h2>
-                <p>This webinar is designed for:</p>
+                <h2>Who Should Use This Guide</h2>
+                <p>This guide is designed for:</p>
                 <ul>
                     <li>CFOs and Finance Directors</li>
                     <li>Tax Managers and Accountants</li>
@@ -285,8 +285,8 @@ const InsightDetail = () => {
                     <li>Contractor and supplier records</li>
                 </ul>
 
-                <h2>Download Resources</h2>
-                <p>Webinar attendees receive access to:</p>
+                <h2>Downloadable Resources</h2>
+                <p>As part of this guide, we offer access to:</p>
                 <ul>
                     <li>R&D Tax Credit Qualification Checklist</li>
                     <li>Documentation Template Package</li>
@@ -294,7 +294,7 @@ const InsightDetail = () => {
                 </ul>
 
                 <h2>Schedule a Consultation</h2>
-                <p>After watching this webinar, schedule a consultation with our R&D tax credit specialists to discuss your specific situation and opportunities.</p>
+                <p>Need help with your R&D tax credit claim? Schedule a consultation with our specialists to discuss your specific situation and opportunities.</p>
             `
         },
         'state-tax-nexus': {

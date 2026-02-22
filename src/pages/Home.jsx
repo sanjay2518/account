@@ -1,292 +1,297 @@
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import Stats from '../components/Stats';
-import InsightCard from '../components/InsightCard';
 import Testimonials from '../components/Testimonials';
+import InsightCard from '../components/InsightCard';
+import AnimateOnScroll from '../components/AnimateOnScroll';
+import PromoVideo from '../components/PromoVideo';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import {
+  BarChart3, FileText, Briefcase, BookOpen, Wallet, Target,
+  ArrowRight, CheckCircle2, TrendingUp, Shield, Users, Award
+} from 'lucide-react';
 import './Home.css';
 
 const Home = () => {
-    const services = [
-        {
-            icon: '📊',
-            title: 'Audit & Assurance',
-            description: 'Comprehensive audit services that provide stakeholder confidence and enhance credibility.',
-            path: '/services/audit',
-            tag: 'Most Popular'
-        },
-        {
-            icon: '📑',
-            title: 'Tax Services',
-            description: 'Strategic tax planning and compliance services to maximize your financial efficiency.',
-            path: '/services/tax'
-        },
-        {
-            icon: '💼',
-            title: 'Financial Advisory',
-            description: 'Expert guidance on mergers, acquisitions, and business transformations.',
-            path: '/services/advisory'
-        },
-        {
-            icon: '📒',
-            title: 'Bookkeeping',
-            description: 'Accurate and timely bookkeeping to keep your financials in perfect order.',
-            path: '/services/bookkeeping'
-        },
-        {
-            icon: '💰',
-            title: 'Payroll Services',
-            description: 'Efficient payroll processing with full compliance and employee self-service.',
-            path: '/services/payroll'
-        },
-        {
-            icon: '🎯',
-            title: 'Business Consulting',
-            description: 'Strategic insights to help your business grow and overcome challenges.',
-            path: '/services/consulting'
-        },
-    ];
+  const [servicesRef, servicesVisible] = useScrollAnimation(0.1);
+  const [statsRef, statsVisible] = useScrollAnimation(0.1);
+  const [insightsRef, insightsVisible] = useScrollAnimation(0.1);
+  const [whyUsRef, whyUsVisible] = useScrollAnimation(0.1);
+  const [ctaRef, ctaVisible] = useScrollAnimation(0.15);
+  const [marqueeRef, marqueeVisible] = useScrollAnimation(0.05);
 
-    const stats = [
-        { value: 50, suffix: '+', label: 'Clients Served', icon: '👥' },
-        { value: 100, suffix: '%', label: 'Client Satisfaction', icon: '⭐' },
-        { value: 5, suffix: '+', label: 'Expert Team', icon: '👨‍💼' },
-        { value: 24, suffix: '/7', label: 'Support', icon: '🚀' },
-    ];
+  // Smooth parallax effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const parallaxElements = document.querySelectorAll('.parallax');
 
-    const industries = [
-        { name: 'Healthcare', icon: '🏥', path: '/industries/healthcare' },
-        { name: 'Technology', icon: '💻', path: '/industries/technology' },
-        { name: 'Manufacturing', icon: '🏭', path: '/industries/manufacturing' },
-        { name: 'Real Estate', icon: '🏢', path: '/industries/real-estate' },
-        { name: 'Retail', icon: '🛒', path: '/industries/retail' },
-        { name: 'Non-Profit', icon: '🤝', path: '/industries/non-profit' },
-    ];
+      parallaxElements.forEach((el) => {
+        const speed = el.dataset.speed || 0.5;
+        el.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    };
 
-    const insights = [
-        {
-            title: '2026 Tax Planning Strategies for Startups',
-            excerpt: 'Discover essential tax-saving strategies that can help your startup minimize liability and maximize growth potential.',
-            category: 'Tax Update',
-            date: 'January 10, 2026',
-            readTime: '5 min read',
-            path: '/insights/tax-planning-2026',
-            featured: true
-        },
-        {
-            title: 'Understanding the New Audit Standards',
-            excerpt: 'A comprehensive guide to the latest changes in audit requirements and how they affect your business.',
-            category: 'Audit',
-            date: 'January 8, 2026',
-            readTime: '4 min read',
-            path: '/insights/new-audit-standards'
-        },
-        {
-            title: 'CFO Insights: Managing Cash Flow for New Businesses',
-            excerpt: 'Expert tips on maintaining healthy cash flow and financial stability during your startup phase.',
-            category: 'Advisory',
-            date: 'January 5, 2026',
-            readTime: '6 min read',
-            path: '/insights/cfo-cash-flow'
-        },
-    ];
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    const testimonials = [
-        {
-            text: "Precision Accounting has transformed how we manage our finances. Their strategic tax planning saved us over ₹15,00,000 in our first year working together.",
-            name: "Priya Sharma",
-            role: "CEO",
-            company: "TechVentures India Pvt. Ltd.",
-            rating: 5
-        },
-        {
-            text: "The audit team was professional, thorough, and provided invaluable insights that helped strengthen our internal controls. Highly recommended!",
-            name: "Rajesh Verma",
-            role: "CFO",
-            company: "Global Manufacturing Co.",
-            rating: 5
-        },
-        {
-            text: "Their payroll services have been a game-changer for our HR department. Accurate, on-time, and their support team is always there when we need them.",
-            name: "Anita Patel",
-            role: "HR Director",
-            company: "Healthcare Solutions India",
-            rating: 5
-        },
-    ];
+  const services = [
+    {
+      icon: <BarChart3 size={28} strokeWidth={1.5} />,
+      title: 'Tax Planning',
+      description: 'Strategic tax solutions to minimize liability and maximize savings for your business.',
+      path: '/services/tax',
+    },
+    {
+      icon: <FileText size={28} strokeWidth={1.5} />,
+      title: 'Audit & Assurance',
+      description: 'Independent verification and risk assessment services that build stakeholder confidence.',
+      path: '/services/audit',
+    },
+    {
+      icon: <Briefcase size={28} strokeWidth={1.5} />,
+      title: 'Financial Advisory',
+      description: 'Expert guidance for business growth, mergers, and smart financial strategy.',
+      path: '/services/advisory',
+    },
+    {
+      icon: <BookOpen size={28} strokeWidth={1.5} />,
+      title: 'Bookkeeping',
+      description: 'Accurate, timely bookkeeping that lets you focus on growing your business.',
+      path: '/services/bookkeeping',
+    },
+    {
+      icon: <Wallet size={28} strokeWidth={1.5} />,
+      title: 'Payroll Services',
+      description: 'Seamless payroll management ensuring compliance and employee satisfaction.',
+      path: '/services/payroll',
+    },
+    {
+      icon: <Target size={28} strokeWidth={1.5} />,
+      title: 'Business Consulting',
+      description: 'Data-driven consulting to unlock growth potential and operational efficiency.',
+      path: '/services/consulting',
+    },
+  ];
 
-    return (
-        <main className="home-page">
-            {/* Hero Section */}
-            <Hero
-                subtitle="Your Modern Financial Partner"
-                title={<>Precision in Every <span>Number.</span> Excellence in Every <span>Solution.</span></>}
-                description="We are a fresh, innovative accounting startup providing comprehensive tax, and advisory services that help businesses achieve financial clarity and sustainable growth."
-                primaryCTA={{ label: "Get Started", path: "/contact" }}
-                secondaryCTA={{ label: "Our Services", path: "/services" }}
-            />
+  const whyUsPoints = [
+    { icon: <Shield size={24} strokeWidth={1.5} />, title: 'Trust & Integrity', description: 'Built on decades of principled practice and transparency.' },
+    { icon: <TrendingUp size={24} strokeWidth={1.5} />, title: 'Growth-Oriented', description: 'Strategies tailored to scale your business sustainably.' },
+    { icon: <Users size={24} strokeWidth={1.5} />, title: 'Dedicated Team', description: 'Experienced CPAs and advisors assigned to each client.' },
+    { icon: <Award size={24} strokeWidth={1.5} />, title: 'Award-Winning', description: 'Recognized for excellence in accounting and advisory.' },
+  ];
 
-            {/* Value Proposition */}
-            <section className="value-prop section">
-                <div className="container">
-                    <div className="value-prop-content">
-                        <div className="value-prop-text">
-                            <span className="section-subtitle">Why Choose Us</span>
-                            <h2>Connecting Financial Expertise with Business Success</h2>
-                            <p>
-                                At Precision Accounting, we believe that every business deserves access to
-                                world-class financial expertise. Our team of dedicated professionals works
-                                alongside you to understand your unique challenges and opportunities,
-                                delivering customized solutions that drive real results.
-                            </p>
-                        </div>
-                        <div className="value-prop-actions">
-                            <Link to="/about" className="btn btn-primary btn-lg">
-                                About Us
-                            </Link>
-                            <Link to="/services" className="btn btn-dark btn-lg">
-                                Our Approach
-                            </Link>
-                            <Link to="/careers" className="btn btn-outline btn-lg">
-                                Join Our Team
-                            </Link>
-                        </div>
-                    </div>
+  return (
+    <div className="home">
+      <Hero
+        title="Expert Accounting & Tax Solutions"
+        subtitle="Trusted Financial Partner"
+        description="Empowering businesses with precision accounting, strategic tax planning, and comprehensive financial advisory services."
+        primaryCTA={{ label: 'Get Started', path: '/contact' }}
+        secondaryCTA={{ label: 'Our Services', path: '/services' }}
+        size="large"
+      />
+
+      {/* Marquee Band */}
+      <div ref={marqueeRef} className={`marquee-band ${marqueeVisible ? 'visible' : ''}`}>
+        <div className="marquee-track">
+          {[...Array(2)].map((_, i) => (
+            <div className="marquee-content" key={i}>
+              <span>Tax Planning</span>
+              <span className="marquee-dot">◆</span>
+              <span>Audit & Assurance</span>
+              <span className="marquee-dot">◆</span>
+              <span>Financial Advisory</span>
+              <span className="marquee-dot">◆</span>
+              <span>Bookkeeping</span>
+              <span className="marquee-dot">◆</span>
+              <span>Payroll Services</span>
+              <span className="marquee-dot">◆</span>
+              <span>Business Consulting</span>
+              <span className="marquee-dot">◆</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Services Section */}
+      <section ref={servicesRef} className={`section services-section ${servicesVisible ? 'visible' : ''}`}>
+        <div className="container">
+          <AnimateOnScroll animation="fade-up" duration={0.9}>
+            <div className="section-header text-center">
+              <span className="section-subtitle">What We Do</span>
+              <h2>Comprehensive Financial Solutions</h2>
+              <p>Tailored to accelerate your business growth with confidence.</p>
+            </div>
+          </AnimateOnScroll>
+
+          <div className={`services-grid stagger-children ${servicesVisible ? 'visible' : ''}`}>
+            {services.map((service, index) => (
+              <AnimateOnScroll
+                key={index}
+                animation="scale-up"
+                delay={0}
+                stagger={0.12}
+                index={index}
+              >
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  path={service.path}
+                  delay={`${index * 0.1}s`}
+                />
+              </AnimateOnScroll>
+            ))}
+          </div>
+
+          <AnimateOnScroll animation="fade-up" delay={0.4}>
+            <div className="section-footer text-center" style={{ marginTop: '3rem' }}>
+              <Link to="/services" className="btn btn-dark btn-lg">
+                Explore All Services
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section ref={statsRef} className={`section stats-section bg-dark ${statsVisible ? 'visible' : ''}`}>
+        <Stats />
+      </section>
+
+      {/* Promo Video Section */}
+      <AnimateOnScroll animation="fade-up" duration={1}>
+        <PromoVideo />
+      </AnimateOnScroll>
+
+      {/* Why Choose Us Section */}
+      <section ref={whyUsRef} className={`section why-us-section ${whyUsVisible ? 'visible' : ''}`}>
+        <div className="container">
+          <div className="why-us-layout">
+            <AnimateOnScroll animation="slide-left" duration={1}>
+              <div className="why-us-text">
+                <span className="section-subtitle">Why Choose Us</span>
+                <h2>A Partner You Can Trust</h2>
+                <p>
+                  For over 15 years, we've helped businesses navigate complex financial
+                  landscapes with clarity, precision, and unwavering commitment to their success.
+                </p>
+                <Link to="/about" className="btn btn-primary btn-lg why-us-btn">
+                  Learn More About Us
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+            </AnimateOnScroll>
+
+            <div className="why-us-grid">
+              {whyUsPoints.map((point, index) => (
+                <AnimateOnScroll
+                  key={index}
+                  animation="fade-up"
+                  stagger={0.15}
+                  index={index}
+                  delay={0.2}
+                >
+                  <div className="why-us-card">
+                    <div className="why-us-icon">{point.icon}</div>
+                    <h4>{point.title}</h4>
+                    <p>{point.description}</p>
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Insights Section */}
+      <section ref={insightsRef} className={`section insights-section ${insightsVisible ? 'visible' : ''}`}>
+        <div className="container">
+          <AnimateOnScroll animation="fade-up" duration={0.9}>
+            <div className="section-header">
+              <div>
+                <span className="section-subtitle">Knowledge Hub</span>
+                <h2>Latest Insights</h2>
+                <p>Stay informed with our expert analysis and industry updates.</p>
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          <div className="insights-grid">
+            <AnimateOnScroll animation="fade-up" delay={0.1}>
+              <InsightCard
+                title="2025 Tax Planning Strategies"
+                category="Tax"
+                date="March 15, 2025"
+              />
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fade-up" delay={0.25}>
+              <InsightCard
+                title="Financial Controls Best Practices"
+                category="Advisory"
+                date="March 10, 2025"
+              />
+            </AnimateOnScroll>
+            <AnimateOnScroll animation="fade-up" delay={0.4}>
+              <InsightCard
+                title="Audit Readiness Guide"
+                category="Audit"
+                date="March 5, 2025"
+              />
+            </AnimateOnScroll>
+          </div>
+
+          <AnimateOnScroll animation="fade-up" delay={0.5}>
+            <div className="section-footer text-center" style={{ marginTop: '3rem' }}>
+              <Link to="/insights" className="btn btn-dark btn-lg">
+                View All Insights
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <AnimateOnScroll animation="fade-up" duration={1}>
+        <Testimonials />
+      </AnimateOnScroll>
+
+      {/* CTA Section */}
+      <section ref={ctaRef} className={`section home-cta ${ctaVisible ? 'visible' : ''}`}>
+        <div className="container">
+          <AnimateOnScroll animation="scale" duration={0.9}>
+            <div className="cta-card">
+              <div className="cta-content">
+                <h2>Ready to Transform Your Financial Strategy?</h2>
+                <p>Let's have a conversation about how Precision Accounting can drive your business forward.</p>
+                <div className="cta-actions">
+                  <Link to="/contact" className="btn btn-primary btn-lg">
+                    Schedule a Consultation
+                  </Link>
+                  <Link to="/services" className="btn btn-outline btn-lg">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    Explore Services
+                  </Link>
                 </div>
-            </section>
-
-            {/* Services Section */}
-            <section className="services-section section-lg bg-gray">
-                <div className="container">
-                    <div className="section-header text-center">
-                        <span className="section-subtitle">What We Do</span>
-                        <h2>Comprehensive Financial Services</h2>
-                        <p className="section-description">
-                            From day-to-day bookkeeping to strategic business consulting,
-                            we offer a full spectrum of services tailored to your needs.
-                        </p>
-                    </div>
-
-                    <div className="services-grid grid grid-cols-3">
-                        {services.map((service, index) => (
-                            <ServiceCard key={index} {...service} />
-                        ))}
-                    </div>
-
-                    <div className="section-footer text-center">
-                        <Link to="/services" className="btn btn-primary btn-lg">
-                            View All Services
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                <path d="M5 12h14M12 5l7 7-7 7" />
-                            </svg>
-                        </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* Stats Section */}
-            <Stats
-                stats={stats}
-                variant="dark"
-                subtitle="Our Impact"
-                title="Numbers That Speak for Themselves"
-            />
-
-            {/* Industries Section */}
-            <section className="industries-section section">
-                <div className="container">
-                    <div className="industries-content">
-                        <div className="industries-text">
-                            <span className="section-subtitle">Industries We Serve</span>
-                            <h2>Deep Expertise Across Sectors</h2>
-                            <p>
-                                We bring specialized knowledge to each industry we serve, understanding
-                                the unique financial challenges and regulatory requirements that affect
-                                your business.
-                            </p>
-                            <Link to="/industries" className="btn btn-dark btn-lg">
-                                Explore Industries
-                            </Link>
-                        </div>
-
-                        <div className="industries-grid">
-                            {industries.map((industry, index) => (
-                                <Link
-                                    key={index}
-                                    to={industry.path}
-                                    className="industry-card"
-                                >
-                                    <span className="industry-icon">{industry.icon}</span>
-                                    <span className="industry-name">{industry.name}</span>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <path d="M5 12h14M12 5l7 7-7 7" />
-                                    </svg>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Testimonials */}
-            <Testimonials
-                testimonials={testimonials}
-                subtitle="Client Success Stories"
-                title="What Our Clients Say"
-            />
-
-            {/* Insights Section */}
-            <section className="insights-section section-lg bg-gray">
-                <div className="container">
-                    <div className="section-header">
-                        <div>
-                            <span className="section-subtitle">Insights & Updates</span>
-                            <h2>The Latest from Precision Accounting</h2>
-                        </div>
-                        <Link to="/insights" className="btn btn-dark">
-                            View All Insights
-                        </Link>
-                    </div>
-
-                    <div className="insights-grid">
-                        {insights.map((insight, index) => (
-                            <InsightCard key={index} {...insight} />
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="home-cta section-lg">
-                <div className="container">
-                    <div className="cta-card">
-                        <div className="cta-content">
-                            <h2>Ready to Get Started?</h2>
-                            <p>
-                                Schedule a free consultation with one of our expert advisors
-                                and discover how we can help your business thrive.
-                            </p>
-                            <div className="cta-actions">
-                                <Link to="/contact" className="btn btn-primary btn-lg">
-                                    Schedule Consultation
-                                </Link>
-                                <a href="tel:+918920473074" className="btn btn-outline btn-lg">
-                                    <svg viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                                    </svg>
-                                    +91 8920473074
-                                </a>
-                            </div>
-                        </div>
-                        <div className="cta-decoration">
-                            <div className="cta-circle"></div>
-                            <div className="cta-circle"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    );
+              </div>
+              <div className="cta-decoration">
+                <div className="cta-circle"></div>
+                <div className="cta-circle"></div>
+              </div>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default Home;

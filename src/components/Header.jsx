@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { BarChart3, FileText, Briefcase, BookOpen, Wallet, Target, Hospital, Monitor, Factory, Building2, ShoppingCart, Handshake } from 'lucide-react';
 import './Header.css';
 
 const Header = () => {
@@ -45,23 +46,23 @@ const Header = () => {
         {
           label: 'Services',
           items: [
-            { label: 'Audit & Assurance', path: '/services/audit', icon: '📊' },
-            { label: 'Tax Services', path: '/services/tax', icon: '📑' },
-            { label: 'Financial Advisory', path: '/services/advisory', icon: '💼' },
-            { label: 'Bookkeeping', path: '/services/bookkeeping', icon: '📒' },
-            { label: 'Payroll Services', path: '/services/payroll', icon: '💰' },
-            { label: 'Business Consulting', path: '/services/consulting', icon: '🎯' },
+            { label: 'Audit & Assurance', path: '/services/audit', icon: <BarChart3 size={18} strokeWidth={1.8} /> },
+            { label: 'Tax Services', path: '/services/tax', icon: <FileText size={18} strokeWidth={1.8} /> },
+            { label: 'Financial Advisory', path: '/services/advisory', icon: <Briefcase size={18} strokeWidth={1.8} /> },
+            { label: 'Bookkeeping', path: '/services/bookkeeping', icon: <BookOpen size={18} strokeWidth={1.8} /> },
+            { label: 'Payroll Services', path: '/services/payroll', icon: <Wallet size={18} strokeWidth={1.8} /> },
+            { label: 'Business Consulting', path: '/services/consulting', icon: <Target size={18} strokeWidth={1.8} /> },
           ]
         },
         {
           label: 'Industries',
           items: [
-            { label: 'Healthcare', path: '/industries/healthcare', icon: '🏥' },
-            { label: 'Technology', path: '/industries/technology', icon: '💻' },
-            { label: 'Manufacturing', path: '/industries/manufacturing', icon: '🏭' },
-            { label: 'Real Estate', path: '/industries/real-estate', icon: '🏢' },
-            { label: 'Retail', path: '/industries/retail', icon: '🛒' },
-            { label: 'Non-Profit', path: '/industries/non-profit', icon: '🤝' },
+            { label: 'Healthcare', path: '/industries/healthcare', icon: <Hospital size={18} strokeWidth={1.8} /> },
+            { label: 'Technology', path: '/industries/technology', icon: <Monitor size={18} strokeWidth={1.8} /> },
+            { label: 'Manufacturing', path: '/industries/manufacturing', icon: <Factory size={18} strokeWidth={1.8} /> },
+            { label: 'Real Estate', path: '/industries/real-estate', icon: <Building2 size={18} strokeWidth={1.8} /> },
+            { label: 'Retail', path: '/industries/retail', icon: <ShoppingCart size={18} strokeWidth={1.8} /> },
+            { label: 'Non-Profit', path: '/industries/non-profit', icon: <Handshake size={18} strokeWidth={1.8} /> },
           ]
         }
       ]
@@ -75,7 +76,6 @@ const Header = () => {
         { label: 'Audit', path: '/insights?category=audit' },
         { label: 'Advisory', path: '/insights?category=advisory' },
         { label: 'Industry Reports', path: '/insights?category=reports' },
-        { label: 'Webinars', path: '/insights?category=webinars' },
       ]
     },
     {

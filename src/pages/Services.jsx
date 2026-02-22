@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import { BarChart3, FileText, Briefcase, BookOpen, Wallet, Target } from 'lucide-react';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import './Services.css';
@@ -8,7 +9,7 @@ const Services = () => {
 
     const allServices = {
         audit: {
-            icon: '📊',
+            icon: <BarChart3 size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Audit & Assurance',
             tagline: 'Building trust through transparency',
             description: 'Our audit and assurance services help organizations build trust with stakeholders through independent, high-quality audits and attestation engagements.',
@@ -27,7 +28,7 @@ const Services = () => {
             ]
         },
         tax: {
-            icon: '📑',
+            icon: <FileText size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Tax Services',
             tagline: 'Strategic tax planning for growth',
             description: 'Our comprehensive tax services help businesses and individuals minimize tax liability while maintaining full compliance with all applicable laws and regulations.',
@@ -46,7 +47,7 @@ const Services = () => {
             ]
         },
         advisory: {
-            icon: '💼',
+            icon: <Briefcase size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Financial Advisory',
             tagline: 'Expert guidance for critical decisions',
             description: 'Our advisory team provides strategic guidance for transactions, transformations, and complex business challenges.',
@@ -65,7 +66,7 @@ const Services = () => {
             ]
         },
         bookkeeping: {
-            icon: '📒',
+            icon: <BookOpen size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Bookkeeping',
             tagline: 'Accurate records, clear insights',
             description: 'Our bookkeeping services ensure your financial records are accurate, up-to-date, and provide the insights you need to manage your business effectively.',
@@ -84,7 +85,7 @@ const Services = () => {
             ]
         },
         payroll: {
-            icon: '💰',
+            icon: <Wallet size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Payroll Services',
             tagline: 'Reliable payroll, every time',
             description: 'Our payroll services ensure your employees are paid accurately and on time, while maintaining compliance with all employment tax requirements.',
@@ -103,7 +104,7 @@ const Services = () => {
             ]
         },
         consulting: {
-            icon: '🎯',
+            icon: <Target size={32} color="#fff" strokeWidth={1.8} />,
             title: 'Business Consulting',
             tagline: 'Strategy for sustainable growth',
             description: 'Our consulting services help businesses overcome challenges, capitalize on opportunities, and achieve sustainable growth.',

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { MapPin, Clock, GraduationCap } from 'lucide-react';
 import Hero from '../components/Hero';
 import './Careers.css';
 
@@ -17,22 +18,22 @@ const AccountingIntern = () => {
                     <div className="job-detail-content">
                         <div className="job-header">
                             <div className="job-meta">
-                                <span className="job-location">📍 Delhi, India</span>
-                                <span className="job-type">⏰ Internship</span>
-                                <span className="job-experience">🎓 0-1 years</span>
+                                <span className="job-location"><MapPin size={16} /> Delhi, India</span>
+                                <span className="job-type"><Clock size={16} /> Internship</span>
+                                <span className="job-experience"><GraduationCap size={16} /> 0-1 years</span>
                             </div>
                         </div>
 
                         <div className="job-description">
                             <h2>About This Role</h2>
                             <p>
-                                We are currently hiring Accounting Interns to join our dynamic team. 
-                                This internship provides excellent exposure to practical accounting, 
+                                We are currently hiring Accounting Interns to join our dynamic team.
+                                This internship provides excellent exposure to practical accounting,
                                 taxation, and audit work under the guidance of experienced Chartered Accountants.
                             </p>
 
                             <h2>Selected Intern's Day-to-Day Responsibilities Include:</h2>
-                            
+
                             <div className="responsibility-section">
                                 <h3>1. Daily Accounting Entries:</h3>
                                 <ul>
